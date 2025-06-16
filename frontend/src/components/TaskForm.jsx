@@ -1,4 +1,4 @@
-// src/components/TaskForm.jsx
+
 import React, { useState, useEffect } from "react";
 import "./TaskForm.css";
 
@@ -6,7 +6,7 @@ function TaskForm({ onAddTask, onUpdateTask, editingTask, setEditingTask }) {
   const [taskName, setTaskName] = useState("");
   const [description, setDescription] = useState("");
 
-  // 🖊️ Populate form if editing
+  
   useEffect(() => {
     if (editingTask) {
       setTaskName(editingTask.name);
@@ -25,17 +25,17 @@ function TaskForm({ onAddTask, onUpdateTask, editingTask, setEditingTask }) {
     };
 
     if (editingTask) {
-      // 🔁 Edit mode
+      //  Edit 
       onUpdateTask(editingTask.id, taskData);
     } else {
-      // ➕ Add mode
+      //  Add 
       onAddTask(taskData);
     }
 
     // Clear form
     setTaskName("");
     setDescription("");
-    setEditingTask(null); // Exit editing mode
+    setEditingTask(null); // Exit editing 
   };
 
   return (
